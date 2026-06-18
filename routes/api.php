@@ -23,7 +23,11 @@ Route::get('/orders', [OrderController::class, 'index']);
 Route::post('/orders', [OrderController::class, 'store']);
 Route::post('/orders/search', [OrderController::class, 'advancedSearch']);
 Route::post('/orders/search/export', [OrderController::class, 'exportSearch']);
+Route::post('/orders/rollover', [OrderController::class, 'rollover']);
+Route::post('/orders/calculate-print', [OrderController::class, 'calculatePrint']);
 Route::get('/orders/{id}/{year}', [OrderController::class, 'show']);
+Route::post('/orders/{id}/{year}/copy', [OrderController::class, 'copy']);
+Route::put('/orders/{id}/{year}/save-all', [OrderController::class, 'saveAll']);
 Route::put('/orders/{id}/{year}', [OrderController::class, 'update']);
 Route::delete('/orders/{id}/{year}', [OrderController::class, 'destroy']);
 
